@@ -3,7 +3,6 @@ import json
 from Catalog import Catalog
 import asyncio
 app = Flask(__name__)
-Catalog = Catalog(120)
 async def Get_data(chosen):
     if chosen == "Premium":
         return await Catalog.Premium
