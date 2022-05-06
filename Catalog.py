@@ -19,8 +19,10 @@ class Catalog:
     @property
     async def Premium(self):
         try:
+            print("looool")
             return self.premium 
         except:
+            print("ok failed")
             self.premium = [x["id"] for x in requests.get(f"https://catalog.roblox.com/v1/search/items?category=Premium&limit={self.limit}&subcategory=Premium").json()["data"]]
             return self.premium
     @property
