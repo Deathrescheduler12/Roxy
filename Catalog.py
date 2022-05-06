@@ -21,8 +21,8 @@ class Catalog:
         try:
             print("looool")
             return self.premium 
-        except:
-            print("ok failed")
+        except Exception as e:
+            print(e)
             self.premium = [x["id"] for x in requests.get(f"https://catalog.roblox.com/v1/search/items?category=Premium&limit={self.limit}&subcategory=Premium").json()["data"]]
             return self.premium
     @property
