@@ -5,6 +5,8 @@ import asyncio
 app = Flask(__name__)
 Catalog = Catalog()
 async def Get_data(chosen):
+    if chosen == "Hats":
+        return await Catalog.Hats
     if chosen == "Premium":
         return await Catalog.Premium
     if chosen == "Collectibles":
