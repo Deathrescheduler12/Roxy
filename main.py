@@ -18,6 +18,5 @@ def get_catalog():
             return json.dumps(asyncio.run(Get_data(y)))
         else:
             continue
-#print(asyncio.run(Get_data()))
 if __name__ == "__main__":
     app.run()
