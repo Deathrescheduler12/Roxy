@@ -5,7 +5,7 @@ import datetime
 class Catalog:
     def __init__(self, limit: int=60):
         self.limit = str(limit)
-        self.db = database("mongodb+srv://mohamed:deeq1012@cluster0.9i97o.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+        self.db = database(mongotoken)
     @property
     async def Hats(self):
         if self.db.get(str(datetime.datetime.now().month), _id = "Hats" + str(datetime.datetime.now().day)):
