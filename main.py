@@ -5,30 +5,12 @@ import asyncio
 app = Flask(__name__)
 Catalog = Catalog()
 async def Get_data(chosen):
-    if chosen == "Hats":
-        return await Catalog.Hats
-    if chosen == "Premium":
-        return await Catalog.Premium
-    if chosen == "Collectibles":
-        return await Catalog.Collectibles
-    if chosen == "Featured":
-        return await Catalog.Featured
-    if chosen == "Clothing":
-        return await Catalog.Clothing
-    if chosen == "Hair":
-        return await Catalog.Hair
-    if chosen == "Face":
-        return await Catalog.Face
-    if chosen == "Neck":
-        return await Catalog.Neck
-    if chosen == "Shoulder":
-        return await Catalog.Shoulder
-    if chosen == "Front":
-        return await Catalog.Front
-    if chosen == "Back":
-        return await Catalog.Back
-    if chosen == "Waist":
-        return await Catalog.Waist
+    x = [("Hats", Catalog.Hats), ("Premium", Catalog.Premium), ("Collectibles", Catalog.Collectibles), ("Clothing", Catalog.Clothing), ("Hair", Catalog.Hair), ("Face", Catalog.Face), ("Neck", Catalog.Neck), ("Shoulder", Catalog.Shoulder), ("Front", Catalog.Front), ("Back", Catalog.Back), ("Waist", Catalog.Waist)]
+    for z in x:
+        if chosen == x[0]:
+            await x[1]
+        else:
+            continue
 @app.route("/get/items", methods=["GET"])
 def get_catalog():
     for x, y in request.args.items():
